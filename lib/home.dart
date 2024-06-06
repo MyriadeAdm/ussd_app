@@ -428,15 +428,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       fontSize: 15,
                       color: Color.fromRGBO(222, 97, 43, 5)),
                 ),
-
-                ElevatedButton(
-                  onPressed: null,
-                  child: Row(
-                    children: [
-                      Text('Voir Plus'),
-                      Icon(Icons.arrow_forward_ios_sharp),
-                    ],
-                  ))
+                Spacer(),
+                TextButton(
+                    onPressed: null,
+                    child: Row(
+                      children: [
+                        Text('Voir Plus'),
+                        Icon(Icons.arrow_forward_ios_sharp),
+                      ],
+                    ))
               ],
             ),
 
