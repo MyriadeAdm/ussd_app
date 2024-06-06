@@ -415,7 +415,7 @@ class _MyHomePageState extends State<MyHomePage> {
             //==============================Section Historique transaction [D]============================
 
             const SizedBox(
-              height: 60,
+              height: 50,
             ),
 
             const Row(
@@ -433,8 +433,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: null,
                     child: Row(
                       children: [
-                        Text('Voir Plus'),
-                        Icon(Icons.arrow_forward_ios_sharp),
+                        Text('Voir Plus', 
+                          style: TextStyle(color: Color.fromRGBO(222, 97, 43, 5) ),),
+                        Icon(Icons.arrow_forward_ios_sharp, size: 18, color: Color.fromRGBO(222, 97, 43, 5),),
                       ],
                     ))
               ],
