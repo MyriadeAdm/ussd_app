@@ -1,8 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:ussd_app/forfait_internet.dart';
-
-import 'forfait_appel.dart';
+import 'package:ussd_app/constants.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -13,21 +11,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
-
-  final List<ForfaitInternet> _forfaitsInternet = [
-    ForfaitInternet('45 Mo', 'Validité 1 jour', '100'),
-    ForfaitInternet('100 Mo', 'Validité 1 jour', '200'),
-    ForfaitInternet('180 Mo', 'Validité 1 jour', '350'),
-    ForfaitInternet('180 Mo', 'Validité 1 jour', '350'),
-    ForfaitInternet('180 Mo', 'Validité 1 jour', '350'),
-  ];
-  final List<ForfaitAppel> _forfaitsAppel = [
-    ForfaitAppel('1000f V TR', '25 SMS', 'Validité 1 jour', '100'),
-    ForfaitAppel('1000f V TR', '25 SMS', 'Validité 1 jour', '200'),
-    ForfaitAppel('1000f V TR', '25 SMS', 'Validité 1 jour', '350'),
-    ForfaitAppel('1000f V TR', '25 SMS', 'Validité 1 jour', '600'),
-    ForfaitAppel('1000f V TR', '25 SMS', 'Validité 1 jour', '1000'),
-  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -53,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 250,
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: const Color.fromRGBO(222, 97, 43, 1),
+                      color: Constants.COLOR_1,
                     ),
                     borderRadius: const BorderRadius.all(Radius.circular(15)),
                   ),
@@ -67,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           width: 40,
                           decoration: const ShapeDecoration(
                             shape: CircleBorder(),
-                            color: Color.fromRGBO(34, 98, 97, 1),
+                            color: Constants.COLOR_2,
                           ),
                           child: TextButton(
                             onPressed: () {},
@@ -86,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: Text(
                             '90 12 34 56',
                             style: TextStyle(
-                              color: Color.fromRGBO(222, 97, 43, 1),
+                              color: Constants.COLOR_1,
                               fontSize: 25,
                               fontWeight: FontWeight.w800,
                               letterSpacing: 0.05,
@@ -115,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor:
-                                const Color.fromRGBO(222, 97, 43, 5),
+                                Constants.COLOR_1,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5.0))),
                         onPressed: () {
@@ -138,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor:
-                                const Color.fromRGBO(222, 97, 43, 5),
+                                Constants.COLOR_1,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5.0))),
                         onPressed: () {
@@ -161,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor:
-                                const Color.fromRGBO(222, 97, 43, 5),
+                                Constants.COLOR_1,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5.0))),
                         onPressed: () {
@@ -184,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor:
-                                const Color.fromRGBO(222, 97, 43, 5),
+                                Constants.COLOR_1,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5.0))),
                         onPressed: () {
@@ -226,7 +209,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   'Forfaits Internet',
                   style: TextStyle(
                       fontWeight: FontWeight.w900,
-                      color: Color.fromRGBO(222, 97, 43, 5)),
+                      color: Constants.COLOR_1),
                 ),
               ],
             ),
@@ -242,9 +225,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 //=========================debut de megas et etc....
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: _forfaitsInternet.length,
+                  itemCount: Constants.FORFAIT_INTERNET.length,
                   itemBuilder: (BuildContext context, int index) {
-                    final item = _forfaitsInternet[index];
+                    final item = Constants.FORFAIT_INTERNET[index];
 
                     return Padding(
                       padding: const EdgeInsets.symmetric(
@@ -252,7 +235,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: const Color.fromRGBO(34, 98, 97, 1),
+                          color: Constants.COLOR_2,
                         ),
                         width: 150,
                         child: Padding(
@@ -283,14 +266,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                     style: const TextStyle(
                                         fontWeight: FontWeight.w900,
                                         fontSize: 30,
-                                        color: Color.fromRGBO(222, 97, 43, 5)),
+                                        color: Constants.COLOR_1),
                                   ),
                                   const Text(
                                     'XOF',
                                     style: TextStyle(
                                         fontWeight: FontWeight.w900,
                                         fontSize: 20,
-                                        color: Color.fromRGBO(222, 97, 43, 5)),
+                                        color: Constants.COLOR_1),
                                   ),
                                 ],
                               ),
@@ -325,7 +308,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   'Forfaits Appel',
                   style: TextStyle(
                       fontWeight: FontWeight.w900,
-                      color: Color.fromRGBO(222, 97, 43, 5)),
+                      color: Constants.COLOR_1),
                 ),
               ],
             ),
@@ -341,9 +324,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 //=========================debut des forfaits appels et etc....
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: _forfaitsAppel.length,
+                  itemCount: Constants.FORFAIT_APPEL.length,
                   itemBuilder: (BuildContext context, int index) {
-                    final item = _forfaitsAppel[index];
+                    final item = Constants.FORFAIT_APPEL[index];
 
                     return Padding(
                       padding: const EdgeInsets.symmetric(
@@ -351,7 +334,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: const Color.fromRGBO(34, 98, 97, 1),
+                          color: Constants.COLOR_2,
                         ),
                         width: 160,
                         child: Padding(
@@ -389,14 +372,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                     style: const TextStyle(
                                         fontWeight: FontWeight.w900,
                                         fontSize: 30,
-                                        color: Color.fromRGBO(222, 97, 43, 5)),
+                                        color: Constants.COLOR_1),
                                   ),
                                   const Text(
                                     'XOF',
                                     style: TextStyle(
                                         fontWeight: FontWeight.w900,
                                         fontSize: 20,
-                                        color: Color.fromRGBO(222, 97, 43, 5)),
+                                        color: Constants.COLOR_1),
                                   ),
                                 ],
                               ),
@@ -415,7 +398,7 @@ class _MyHomePageState extends State<MyHomePage> {
             //==============================Section Historique transaction [D]============================
 
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
 
             const Row(
@@ -426,27 +409,97 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: TextStyle(
                       fontWeight: FontWeight.w900,
                       fontSize: 15,
-                      color: Color.fromRGBO(222, 97, 43, 5)),
+                      color: Constants.COLOR_1),
                 ),
                 Spacer(),
                 TextButton(
                     onPressed: null,
                     child: Row(
                       children: [
-                        Text('Voir Plus', 
-                          style: TextStyle(color: Color.fromRGBO(222, 97, 43, 5) ),),
-                        Icon(Icons.arrow_forward_ios_sharp, size: 18, color: Color.fromRGBO(222, 97, 43, 5),),
+                        Text(
+                          'Voir Plus',
+                          style:
+                              TextStyle(color: Constants.COLOR_1),
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios_sharp,
+                          size: 18,
+                          color: Constants.COLOR_1,
+                        ),
                       ],
                     ))
               ],
             ),
 
             const SizedBox(
-              height: 10,
+              height: 4,
+            ),
+
+            SizedBox(
+              height: 120,
+              child: Center(
+                // ============================== Row Historiques ===============================
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: Constants.HISTORIQUE.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    final item = Constants.HISTORIQUE[index];
+
+                    return Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Card(
+                        elevation: 5,
+                        shadowColor: Colors.grey,
+                        color: Colors.white,
+                        child: Padding(
+                          padding: const EdgeInsets.all(14),
+                          child: Row(
+                            
+                            children: [
+                              const Icon(Icons.history_rounded, size: 50,),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Text('Dernière transaction',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 15,
+                                    ),),
+                                    const SizedBox(
+                                    height: 3,
+                                  ),
+                                  Text('Achat ${item.typeForfait} ${item.montantForfait}',
+                                    style: const TextStyle(
+                                      fontSize: 12,
+                                    ),),
+                                  const SizedBox(
+                                    height: 3,
+                                  ),
+                                  Text(item.dateTime,
+                                    style: const TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                    ),),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
             ),
           ],
         ),
       ),
+
+
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
