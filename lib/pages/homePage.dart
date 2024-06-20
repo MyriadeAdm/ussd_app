@@ -1,31 +1,15 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:ussd_app/constants.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+import '../constants.dart';
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+class Homepage extends StatelessWidget {
+  const Homepage({super.key});
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
+  
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Ussd App'),
-      ),
-      body: SafeArea(
+    return SafeArea(
         child: SizedBox(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -500,33 +484,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-      ),
-
-
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Accueil',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.sync_alt),
-            label: 'Forfaits',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.payments),
-            label: 'Transactions',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Réglages',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.orange[700],
-        unselectedItemColor: Colors.grey.shade700,
-        onTap: _onItemTapped,
-      ),
-    );
+      );
   }
+
+  
 }
