@@ -14,46 +14,36 @@ class Homepage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // ========================== Box orange avec numero [D]
+              // ========================== Box Type Sim [D]
               Row(
                 children: [
                   Container(
                     margin: const EdgeInsets.all(10.0),
                     width: 250,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Constants.COLOR_1,
-                      ),
-                      borderRadius: const BorderRadius.all(Radius.circular(15)),
-                    ),
+                  
                     child: Center(
                       child: Row(
                         children: [
                           const Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 25.0, horizontal: 10.0)),
+                              padding: EdgeInsets.symmetric(vertical: 25.0, horizontal: 10.0)),
                           Ink(
-                            width: 40,
                             decoration: const ShapeDecoration(
                               shape: CircleBorder(),
                               color: Constants.COLOR_2,
                             ),
-                            child: TextButton(
-                              onPressed: () {},
-                              child: const Text(
-                                '1',
-                                style: TextStyle(
+                            child: const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Icon(
+                                  Icons.sim_card,
                                   color: Colors.white,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w700,
-                                ),
+                                  size: 20,
                               ),
                             ),
                           ),
                           const Padding(
                             padding: EdgeInsets.only(left: 20.0),
                             child: Text(
-                              '90 12 34 56',
+                              'Togocom',
                               style: TextStyle(
                                 color: Constants.COLOR_1,
                                 fontSize: 25,
